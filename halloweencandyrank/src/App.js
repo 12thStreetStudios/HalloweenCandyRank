@@ -7,8 +7,8 @@ import './styles/App.css';
 class App extends Component {
   state = {
     candies: null,
-    candy1: null,
-    candy2: null
+    candy1: {name: '', image: ''},
+    candy2: {name: '', image: ''}
   };
 
   componentDidMount() {
