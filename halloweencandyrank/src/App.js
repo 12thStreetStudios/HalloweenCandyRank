@@ -13,8 +13,10 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackendAPI()
-      .then(res => {this.setState({ candies: res.data}); this.setCandies();})
-      .catch(err => console.log(err));
+      .then(res => {
+        this.setState({ candies: res.data});
+        this.setCandies();
+      }).catch(err => console.log(err));
   }
 
   getCandies = async () => {
@@ -27,15 +29,16 @@ class App extends Component {
   };
 
   setCandies() {
-    var candies = state.data.candies;
+    var candies = this.state.data.candies;
     // select random candies from list
     var c1 = candies[Math.floor(Math.random() * candies.length)];
     var c2 = candies[Math.floor(Math.random() * candies.length)];
     this.setState({candy1: c1, candy2: c2});
   }
 
-  vote = async () => {
-
+  vote = async (w,l) => {
+    // w is winner, l is loser
+  
   };
 
   render() {
