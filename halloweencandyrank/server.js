@@ -5,29 +5,28 @@ const mariadb = require('mariadb');
 const pool = mariadb.createPool({
   host: 'localhost',
   user: 'candyuser',
-  password: 'candypass'
+  password: 'candypass',
+  database: 'sc_candy'
 });
 
 async function asyncFunction() {
   let conn;
   try {
-    conn = await SecurityPolicyViolationEvent.getConnection();
-    const rows = await conn.query("SELECT 1 as val");
-    console.log(rows);
-    const res = await  conn.query("SELECT * FROM candy;");
+    conn = await pool.getConnection();
+    const res = await  conn.query("SELECT * FROM sc_candy.candy;");
     console.log(res);
   } catch (err) {
-    throw err;
+    console.log(err);
   } finally {
-    if (conn) return conn.end();
+    if (conn) {conn.end();}
+    return conn.res;
   }
 }
-
 
 // log that server is up
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // create a GET route
 app.get('/express_backend', (req, res) => {
-  res.send({ express: 'Express Backend is Connected to React'});
+  res.send(asyncFunction());
 });
