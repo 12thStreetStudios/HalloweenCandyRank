@@ -22,6 +22,7 @@ Candy Component:
             ...this.state,
             pressed: 'yes'
         })
+        
     }
     
     render() {
