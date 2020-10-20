@@ -12,7 +12,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.callBackendAPI()
+    this.getCandies()
       .then(res => {
         this.setState({ candies: res.data});
         this.setCandies();
