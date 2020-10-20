@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Candy from './components/Candy';
 import Skip from './components/Skip';
 
