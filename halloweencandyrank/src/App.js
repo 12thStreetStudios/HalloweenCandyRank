@@ -13,8 +13,10 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackendAPI()
-      .then(res => {this.setState({ candies: res.data}); this.setCandies();})
-      .catch(err => console.log(err));
+      .then(res => {
+        this.setState({ candies: res.data});
+        this.setCandies();
+      }).catch(err => console.log(err));
   }
 
   getCandies = async () => {
@@ -34,8 +36,9 @@ class App extends Component {
     this.setState({candy1: c1, candy2: c2});
   }
 
-  vote = async () => {
-
+  vote = async (w,l) => {
+    // w is winner, l is loser
+  
   };
 
   render() {
