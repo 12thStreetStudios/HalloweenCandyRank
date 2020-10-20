@@ -1,0 +1,2 @@
+#!/bin/env bash
+node server.js & pid1="$!" ; npm start ; kill $pid1
