@@ -12,18 +12,21 @@ Candy Component:
 
         this.state = {
             name: props.name,
-            imgUrl: props.imgUrl
+            imgUrl: props.imgUrl,
+            pressed: 'no'
         }
     }
     
     onClick = () => {
-        /* submit button and reset */
+        
     }
     
     render() {
         return (
-            <div className="Candy">
-                <h3 className="Name">{this.props.name}</h3>
+            <div className="Candy" onClick={this.onClick}>
+                <h3 className="Name" >
+                    {this.state.name}
+                </h3>
                 <div className="Photo">
                     <img src={this.props.imgUrl} alt=""></img>
                 </div>

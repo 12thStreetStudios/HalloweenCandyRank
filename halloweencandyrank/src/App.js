@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Candy from './components/Candy';
+import Skip from './components/Skip';
+
+import './styles/App.css';
 
 class App extends Component {
   state = {
@@ -27,10 +30,19 @@ class App extends Component {
     <div className="App">
       <p>{this.state.data}</p>
       <div className="Candy">
-        <Candy className="CandyOne" name="test1"/>
-        <Candy className="CandyTwo" name="test2"/>
+        <ul>
+        <div className="Candy1">
+          <Candy className="CandyOne" name="test1"/>
+        </div>
+        <div>
+          <Candy className="CandyTwo" name="test2"/>
+        </div>
+        </ul>
       </div>
-
+      
+      <div className="SkipButton">
+        <Skip />
+      </div>
     </div>
     );
   }
