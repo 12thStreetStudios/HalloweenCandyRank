@@ -7,8 +7,8 @@ import './styles/App.css';
 class App extends Component {
   state = {
     candies: null,
-    candy1: {name: '', image: ''},
-    candy2: {name: '', image: ''}
+    candy1: {name: 'a', image: ''},
+    candy2: {name: 'a', image: ''}
   };
 
   componentDidMount() {
@@ -45,16 +45,9 @@ class App extends Component {
   return (
     <div className="App">
       <div className="Candy">
-        <ul>
-        <div className="Candy1">
-          <Candy className="CandyOne" name={this.state.candy1.name} imgUrl={this.state.candy1.image}/>
-        </div>
-        <div>
-          <Candy className="CandyTwo" name={this.state.candy2.name} imgUrl={this.state.candy2.image}/>
-        </div>
-        </ul>
+        <Candy className="CandyOne" name={this.state.candy1.name} imgUrl={this.state.candy1.image}/>
+        <Candy className="CandyTwo" name={this.state.candy2.name} imgUrl={this.state.candy2.image}/>
       </div>
-      
       <div className="SkipButton">
         <Skip />
       </div>
