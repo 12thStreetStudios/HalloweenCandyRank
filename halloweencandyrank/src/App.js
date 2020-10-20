@@ -27,7 +27,7 @@ class App extends Component {
   };
 
   setCandies() {
-    var candies = state.data.candies;
+    var candies =this.state.data.candies;
     // select random candies from list
     var c1 = candies[Math.floor(Math.random() * candies.length)];
     var c2 = candies[Math.floor(Math.random() * candies.length)];
