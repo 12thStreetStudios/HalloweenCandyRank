@@ -27,6 +27,7 @@ async function executeSql(stmt) {
 
 // log that server is up
 app.listen(port, () => console.log(`Listening on port ${port}`));
+app.use(express.json());
 
 // create a GET route
 app.get('/candies', (req, res) => {
