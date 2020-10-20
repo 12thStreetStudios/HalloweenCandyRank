@@ -18,13 +18,16 @@ Candy Component:
     }
     
     onClick = () => {
-        
+        this.setState({
+            ...this.state,
+            pressed: 'yes'
+        })
     }
     
     render() {
         return (
             <div className="Candy" onClick={this.onClick}>
-                <h3 className="Name" >
+                <h3 className="Name">
                     {this.state.name}
                 </h3>
                 <div className="Photo">
