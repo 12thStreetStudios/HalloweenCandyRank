@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 const mariadb = require('mariadb');
+// creates a pool so that multiple requests can happen
 const pool = mariadb.createPool({
   host: 'localhost',
   user: 'candyuser',
@@ -9,17 +10,18 @@ const pool = mariadb.createPool({
   database: 'sc_candy'
 });
 
-async function asyncFunction() {
+async function executeSql(stmt) {
   let conn;
+  let res;
   try {
     conn = await pool.getConnection();
-    const res = await  conn.query("SELECT * FROM sc_candy.candy;");
+    res = await  conn.query(stmt);
     console.log(res);
   } catch (err) {
     console.log(err);
   } finally {
     if (conn) {conn.end();}
-    return conn.res;
+    return res;
   }
 }
 
@@ -27,6 +29,17 @@ async function asyncFunction() {
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // create a GET route
-app.get('/express_backend', (req, res) => {
-  res.send(asyncFunction());
+app.get('/candies', (req, res) => {
+  res.send(executeSql("SELECT * FROM candy;"));
+});
+
+// create a POST route for voting
+app.post('/vote', (req, res) => {
+  console.log("Logging Vote...");
+  const s = executeSql(`INSERT INTO vote (winner, loser, time, region) VALUES (${req.body.winner}, ${req.body.loser}, CURRENT_DATE(), ${req.body.region})`);
+  if (s){
+    res.send("Vote Logged");
+  } else {
+    res.send("Error");
+  }
 });
