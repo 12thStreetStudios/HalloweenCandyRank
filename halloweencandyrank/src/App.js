@@ -14,7 +14,7 @@ class App extends Component {
   componentDidMount() {
     this.getCandies()
       .then(res => {
-        this.setState({ candies: res.data});
+        this.setState({candies: res.data});
         this.setCandies();
       }).catch(err => console.log(err));
   }

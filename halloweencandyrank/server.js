@@ -16,7 +16,7 @@ async function executeSql(stmt) {
   try {
     conn = await pool.getConnection();
     res = await  conn.query(stmt);
-    console.log(res);
+    console.log("Executing statement: "+stmt);
   } catch (err) {
     console.log(err);
   } finally {
