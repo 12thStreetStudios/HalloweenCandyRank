@@ -1,7 +1,7 @@
 .Candy {
 flex-direction:row;
 display: flex; 
-
+align-items: center;
 }
 .CandyOne {
 float: left
