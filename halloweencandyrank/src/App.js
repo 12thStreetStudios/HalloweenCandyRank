@@ -14,7 +14,7 @@ class App extends Component {
   componentDidMount() {
     this.getCandies()
       .then(res => {
-        this.setState({candies: res.data});
+        this.setState({candies: res});
         this.setCandies();
       }).catch(err => console.log(err));
   }
@@ -25,10 +25,12 @@ class App extends Component {
     if (response.status !== 200) {
       throw Error(body.message)
     }
+		console.log(body);
     return body;
   };
 
   setCandies() {
+		console.log("Candies: " + this.state.candies);
     var candies = this.state.candies;
     // select random candies from list
     var c1 = candies[Math.floor(Math.random() * candies.length)];
@@ -59,16 +61,13 @@ class App extends Component {
   return (
     <div className="App">
       <div className="Candy">
-        <ul>
         <div className="Candy1" onClick={this.vote1}>
           <Candy className="CandyOne" name={this.state.candy1.name} imgUrl={this.state.candy1.image}/>
         </div>
         <div onClick={this.vote2}>
           <Candy className="CandyTwo" name={this.state.candy2.name} imgUrl={this.state.candy2.image}/>
         </div>
-        </ul>
       </div>
-      
       <div className="SkipButton">
         <Skip />
       </div>

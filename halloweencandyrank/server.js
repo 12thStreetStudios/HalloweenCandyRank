@@ -32,7 +32,7 @@ app.use(express.json());
 
 // create a GET route
 app.get('/candies/', (req, res) => {
-  var s = await executeSql("SELECT * FROM candy;").then(res.send(s));
+ 	executeSql("SELECT * FROM candy;").then((s) => res.send(s));
 });
 
 // create a POST route for voting

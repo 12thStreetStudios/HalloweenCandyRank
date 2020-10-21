@@ -22,12 +22,12 @@ Candy Component:
             ...this.state,
             pressed: 'yes'
         })
-        
+
     }
     
     render() {
         return (
-            <div className="Candy" onClick={this.onClick}>
+            <div className="Candyc" onClick={this.onClick}>
                 <h3 className="Name">
                     {this.state.name}
                 </h3>

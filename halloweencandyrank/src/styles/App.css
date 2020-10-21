@@ -1,14 +1,13 @@
 .Candy {
-text-align: center;
-}
-
-.Candy1 {
-  float: left;
+flex-direction:row;
+display: flex; 
 
 }
-
-.Candy2 {
-  float: right;
+.CandyOne {
+float: left
+}
+.CandyTwo {
+float: right;
 }
 
 .SkipButton {
