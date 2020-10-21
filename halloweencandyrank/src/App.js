@@ -49,12 +49,12 @@ class App extends Component {
       .then(res => console.log(res));
   };
 
-  vote1() {
-    vote(this.state.candy1.ID, this.state.candy2.ID);
+  vote1 = async () => {
+    this.vote(this.state.candy1.ID, this.state.candy2.ID);
   }
 
-  vote2() {
-    vote(this.state.candy2.ID, this.state.candy1.ID);
+  vote2 = async () => {
+    this.vote(this.state.candy2.ID, this.state.candy1.ID);
   }
 
   render() {
