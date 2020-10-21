@@ -21,7 +21,8 @@ async function executeSql(stmt) {
     console.log(err);
   } finally {
     if (conn) {conn.end();}
-    return res;
+    console.log(res);
+    return JSON.parse(JSON.stringify(res));
   }
 }
 
@@ -30,12 +31,12 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 app.use(express.json());
 
 // create a GET route
-app.get('/candies', (req, res) => {
-  res.send(executeSql("SELECT * FROM candy;"));
+app.get('/candies/', (req, res) => {
+  var s = await executeSql("SELECT * FROM candy;").then(res.send(s));
 });
 
 // create a POST route for voting
-app.post('/vote', (req, res) => {
+app.post('/vote/', (req, res) => {
   console.log("Logging Vote...");
   const s = executeSql(`INSERT INTO vote (winner, loser, time, region) VALUES (${req.body.winner}, ${req.body.loser}, CURRENT_DATE(), ${req.body.region})`);
   if (s){

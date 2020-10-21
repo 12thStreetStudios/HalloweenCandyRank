@@ -38,18 +38,32 @@ class App extends Component {
 
   vote = async (w,l) => {
     // w is winner, l is loser
-  
+    const reqOptions = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({winner: w, loser: l, region: 'NULL'})
+    }
+    fetch('/vote', reqOptions)
+      .then(res => console.log(res));
   };
+
+  vote1() {
+    this.vote(this.state.candy1.ID, this.state.candy2.ID);
+  }
+
+  vote2() {
+    this.vote(this.state.candy2.ID, this.state.candy1.ID);
+  }
 
   render() {
   return (
     <div className="App">
       <div className="Candy">
         <ul>
-        <div className="Candy1">
+        <div className="Candy1" onClick={this.vote1}>
           <Candy className="CandyOne" name={this.state.candy1.name} imgUrl={this.state.candy1.image}/>
         </div>
-        <div>
+        <div onClick={this.vote2}>
           <Candy className="CandyTwo" name={this.state.candy2.name} imgUrl={this.state.candy2.image}/>
         </div>
         </ul>
