@@ -37,7 +37,7 @@ app.get('/candies/', (req, res) => {
 // create a POST route for voting
 app.post('/vote/', (req, res) => {
   console.log("Logging Vote...");
-  const s = executeSql(`INSERT INTO vote (winner, loser, time, region) VALUES (${req.body.winner}, ${req.body.loser}, CURRENT_DATE(), ${req.body.region})`);
+  const s = executeSql(`INSERT INTO vote (winner, loser, time_posted, region) VALUES (${req.body.winner}, ${req.body.loser}, NOW(), ${req.body.region})`);
   if (s){
     res.send("Vote Logged");
   } else {
