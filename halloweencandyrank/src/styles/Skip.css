@@ -1,7 +1,11 @@
 .Skip {
-
+margin: auto;
+border: 1px solid;
+width: 50%;
+padding: 10px;
 }
 
-.Button {
-    
+.Skip:hover {
+    background-color: greenyellow;
+    text-decoration: bold;
 }
