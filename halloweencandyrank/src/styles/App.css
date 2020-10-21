@@ -2,19 +2,18 @@
 flex-direction:row;
 display: flex; 
 justify-content: center;
+padding: 10px;
+margin: 10px;
 
 }
 .CandyOne {
 position: absolute;
-left: 0;
-width: 300px;
-padding: 10px;
+float: left;
+
 }
 .CandyTwo {
 position: absolute;
-right: 0px;
-width: 300px;
-padding: 10px;
+float: right;
 }
 
 .SkipButton {

@@ -1,7 +1,8 @@
 .Candyc {
 
 margin: auto;
-
+height: 500px;
+width: 315px;
 padding: 10px;
 
 }
@@ -11,6 +12,5 @@ padding: 10px;
 }
 
 .Candy.Photo {
-height: auto;
-width: 50%;
+
 }
