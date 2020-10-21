@@ -66,14 +66,14 @@ class App extends Component {
   return (
     <div className="App">
       <div className="Candy">
-        <div className="Candy1" onClick={this.vote1}>
+        <div onClick={this.vote1}>
           <Candy className="CandyOne" name={this.state.candy1.name} imgUrl={this.state.candy1.image}/>
         </div>
         <div onClick={this.vote2}>
           <Candy className="CandyTwo" name={this.state.candy2.name} imgUrl={this.state.candy2.image}/>
         </div>
       </div>
-      <div className="SkipButton" onclick={this.setCandies}>
+      <div className="SkipButton" onClick={this.setCandies}>
         <Skip />
       </div>
     </div>
