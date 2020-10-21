@@ -5,11 +5,17 @@ import Skip from './components/Skip';
 import './styles/App.css';
 
 class App extends Component {
-  state = {
+constructor(props) {
+  super(props);
+
+  this.state = {
     candies: null,
     candy1: {name: '', image: ''},
     candy2: {name: '', image: ''}
   };
+}
+
+  
 
   componentDidMount() {
     this.getCandies()
