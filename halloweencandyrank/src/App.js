@@ -9,7 +9,7 @@ constructor(props) {
   super(props);
 
   this.state = {
-    candies: null,
+    candies: [],
     candy1: {name: '', image: ''},
     candy2: {name: '', image: ''}
   };
