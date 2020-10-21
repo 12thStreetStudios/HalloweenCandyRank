@@ -35,8 +35,7 @@ constructor(props) {
     return body;
   };
 
-  setCandies() {
-		
+  setCandies = () => {
     var candies = this.state.candies;
     // select random candies from list
     var c1 = candies[Math.floor(Math.random() * candies.length)];
