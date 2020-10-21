@@ -73,7 +73,7 @@ class App extends Component {
           <Candy className="CandyTwo" name={this.state.candy2.name} imgUrl={this.state.candy2.image}/>
         </div>
       </div>
-      <div className="SkipButton">
+      <div className="SkipButton" onclick={this.setCandies}>
         <Skip />
       </div>
     </div>
