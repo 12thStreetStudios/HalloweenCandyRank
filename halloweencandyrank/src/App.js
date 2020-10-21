@@ -50,11 +50,11 @@ class App extends Component {
   };
 
   vote1() {
-    this.vote(this.state.candy1.ID, this.state.candy2.ID);
+    vote(this.state.candy1.ID, this.state.candy2.ID);
   }
 
   vote2() {
-    this.vote(this.state.candy2.ID, this.state.candy1.ID);
+    vote(this.state.candy2.ID, this.state.candy1.ID);
   }
 
   render() {

@@ -21,7 +21,6 @@ async function executeSql(stmt) {
     console.log(err);
   } finally {
     if (conn) {conn.end();}
-    console.log(res);
     return JSON.parse(JSON.stringify(res));
   }
 }
