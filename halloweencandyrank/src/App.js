@@ -5,11 +5,17 @@ import Skip from './components/Skip';
 import './styles/App.css';
 
 class App extends Component {
-  state = {
-    candies: null,
+constructor(props) {
+  super(props);
+
+  this.state = {
+    candies: [],
     candy1: {name: '', image: ''},
     candy2: {name: '', image: ''}
   };
+}
+
+  
 
   componentDidMount() {
     this.getCandies()
@@ -29,8 +35,7 @@ class App extends Component {
     return body;
   };
 
-  setCandies() {
-		console.log("Candies: " + this.state.candies);
+  setCandies = () => {
     var candies = this.state.candies;
     // select random candies from list
     var i1 = Math.floor(Math.random() * candies.length);
@@ -69,14 +74,14 @@ class App extends Component {
   return (
     <div className="App">
       <div className="Candy">
-        <div className="Candy1" onClick={this.vote1}>
+        <div onClick={this.vote1}>
           <Candy className="CandyOne" name={this.state.candy1.name} imgUrl={this.state.candy1.image}/>
         </div>
         <div onClick={this.vote2}>
           <Candy className="CandyTwo" name={this.state.candy2.name} imgUrl={this.state.candy2.image}/>
         </div>
       </div>
-      <div className="SkipButton" onclick={this.setCandies}>
+      <div className="SkipButton" onClick={this.setCandies}>
         <Skip />
       </div>
     </div>
