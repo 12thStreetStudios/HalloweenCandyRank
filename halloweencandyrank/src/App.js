@@ -33,11 +33,14 @@ class App extends Component {
 		console.log("Candies: " + this.state.candies);
     var candies = this.state.candies;
     // select random candies from list
-    var c1 = candies[Math.floor(Math.random() * candies.length)];
-    var c2 = candies[Math.floor(Math.random() * candies.length)];
-    if(c1 === c2) { 
-      this.setCandies();
-    }
+    var i1 = Math.floor(Math.random() * candies.length);
+    // Make sure we don't have the same index
+    var i2;
+    do {
+      i2 = Math.floor(Math.random() * candies.length);
+    } while (i1 === i2);
+    var c1 = candies[i1];
+    var c2 = candies[i2];
     this.setState({candy1: c1, candy2: c2});
   }
 
