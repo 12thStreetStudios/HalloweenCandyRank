@@ -1,18 +1,15 @@
 .Candyc {
-
 margin: auto;
-height: 500px;
-width: 315px;
+width: 50%;
+height: 400px;
 padding: 10px;
-display: block;
+align-items: center
+}
 
+.Candyc img {
+    max-width: 100%;
 }
 
 .Candy.Name {
 
-}
-
-.Candy.Photo {
-    max-width: 100%;
-    height: auto;
 }
