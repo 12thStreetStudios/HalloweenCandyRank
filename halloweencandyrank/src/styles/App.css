@@ -1,21 +1,14 @@
 .Candy {
-flex-direction:row;
-display: flex; 
 justify-content: center;
 padding: 10px;
 margin: 10px;
-
-}
-.CandyOne {
-position: absolute;
-float: left;
-
-}
-.CandyTwo {
-position: absolute;
-float: right;
 }
 
 .SkipButton {
-  text-align: center
+	width: 60%;
+	height: 10rem;
+	background-color: red;
+	border-radius: 8px;
+	border-width: 5px;
+  text-align: center;
 }
