@@ -4,6 +4,7 @@ margin: auto;
 height: 500px;
 width: 315px;
 padding: 10px;
+display: block;
 
 }
 
@@ -12,5 +13,5 @@ padding: 10px;
 }
 
 .Candy.Photo {
-
+    width: 100%;
 }
