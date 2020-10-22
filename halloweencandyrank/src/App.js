@@ -29,6 +29,9 @@ export default function App() {
           <Route path="/admin">
             <Admin />
           </Route>
+          <Route path="/about">
+            <About />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
@@ -128,3 +131,11 @@ constructor(props) {
   }
 }
 
+function About() {
+  return (
+  <div>
+    <h2>WAP</h2>
+    <h3>(Wet A$$ Pumpkins)</h3>
+  </div>
+  );
+}
