@@ -1,10 +1,49 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 import Candy from './components/Candy';
 import Skip from './components/Skip';
+import Ranker from './components/Ranking';
+import Admin from './components/Admin';
 
 import './styles/App.css';
 
-class App extends Component {
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <nav>
+          <Link to="/"></Link>
+          <Link to="/ranks"></Link>
+          <Link to="/admin"></Link>
+        </nav>
+
+        <Switch>
+          <Route path="/ranks">
+            <Ranker />
+          </Route>
+          <Route path="/admin">
+            <Admin />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+
+
+
+
+
+class Home extends Component {
 constructor(props) {
   super(props);
 
@@ -89,4 +128,3 @@ constructor(props) {
   }
 }
 
-export default App;
