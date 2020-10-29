@@ -1,6 +1,6 @@
 .Candyc {
 	padding: 10px;
-	align-items: center;
+	place-items: center;
 }
 
 .Candy {
@@ -8,7 +8,10 @@
 }
 
 .Candyc img {
-    max-width: 50%;
-		object-fit: contain;
+	flex: auto;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 50%;
 }
 

@@ -1,14 +1,25 @@
-.Candy {
-justify-content: center;
-padding: 10px;
-margin: 10px;
+.App {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	place-items: center;
+}
+.App .Candy {
+	place-items: center;
+	margin: 1px;
+	max-width: 100%;
+	height: auto;
+	width: auto/9;
+/*
+uncomment to see border
+	border-style: dashed;
+	border-width: 4px;
+	border-color: blue;
+*/
+
 }
 
-.SkipButton {
-	width: 60%;
-	height: 10rem;
-	background-color: red;
-	border-radius: 8px;
-	border-width: 5px;
-  text-align: center;
+.App .SkipButton {
+	flex: 1 1 150px;
+  	text-align: center;
 }

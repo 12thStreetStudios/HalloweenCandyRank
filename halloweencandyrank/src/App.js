@@ -115,14 +115,14 @@ constructor(props) {
   render() {
   return (
     <div className="App">
-      <div className="Candy">
-        <div onClick={this.vote1}>
-          <Candy className="CandyOne left" name={this.state.candy1.name} imgUrl={this.state.candy1.image}/>
+      <div>
+        <div className="Candy" onClick={this.vote1}>
+          <Candy className="CandyOne" name={this.state.candy1.name} imgUrl={this.state.candy1.image}/>
         </div>
-      <div className="SkipButton" onClick={this.setCandies}>
-        <Skip />
-      </div>
-        <div onClick={this.vote2}>
+        <div className="SkipButton" onClick={this.setCandies}>
+          <Skip />
+        </div>
+        <div className="Candy"onClick={this.vote2}>
           <Candy className="CandyTwo right" name={this.state.candy2.name} imgUrl={this.state.candy2.image}/>
         </div>
       </div>
